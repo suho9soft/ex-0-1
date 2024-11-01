@@ -9,7 +9,7 @@ byte mac[] = {
   0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED
 };
 //내 장치의 고유한 IP주소
-IPAddress ip(172, 30, 1, 123);
+IPAddress ip(172, 30, 1, 121);
 
 //TCP서버의 포트번호가 몇인가?
 //modbus tcp의 기본 포트번호
@@ -25,7 +25,7 @@ union{
 }converter;
 
 //코일주소 0~7까지 8개의 주소가 있는 상황이다!
-byte coil[] = {2,3,4,5,6,7,8,9};//어드레스맵
+byte coil[] = {26,28,30,32,34,36,38,40,2,3};//어드레스맵
 //HIGH == true == 1
 //LOW == false == 0
 bool coil_state[] = {LOW,LOW,LOW,LOW,LOW,LOW,LOW,LOW};
@@ -175,4 +175,3 @@ void loop() {
     Serial.println("클라이언트와 접속이 해제됨!");
   }
 }
-
