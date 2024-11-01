@@ -1,7 +1,7 @@
 # ex-0-1
 Arduino Ethernet Shield 2 Raspberry Pi 4 Windows11
 
-
+제목:Arduino Ethernet2 세팅 프로그램/릴레이스위치8단
 //////////시작////////////////////////////
 
 
