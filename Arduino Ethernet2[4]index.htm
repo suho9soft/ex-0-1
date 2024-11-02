@@ -1,1 +1,77 @@
+#include <SPI.h>
+#include <Ethernet.h>
+#include <SD.h>
 
+// 이더넷 설정 (네트워크에 맞게 수정 필요)
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; // MAC 주소
+IPAddress ip(172, 30, 1, 200);  // Arduino의 고정 IP 주소
+
+EthernetServer server(80);  // HTTP 서버 포트 80
+File webFile;               // 클라이언트에게 제공할 파일
+
+void setup() {
+  // 시리얼 통신 시작
+  Serial.begin(9600);
+
+  // 이더넷 연결 초기화
+  Ethernet.begin(mac, ip);
+  server.begin(); // 서버 시작
+  Serial.print("서버 IP: ");
+  Serial.println(Ethernet.localIP());
+
+  // SD 카드 초기화
+  if (!SD.begin(4)) { // SD 카드가 연결된 핀 번호 4
+    Serial.println("SD 카드 초기화 실패!");
+    return;
+  }
+  Serial.println("SD 카드 초기화 성공.");
+}
+
+void loop() {
+  // 클라이언트가 서버에 연결되었는지 확인
+  EthernetClient client = server.available();
+  if (client) {
+    boolean currentLineIsBlank = true;
+    while (client.connected()) {
+      if (client.available()) {
+        char c = client.read();
+
+        // 빈 줄을 만나면 클라이언트에게 파일 전송
+        if (c == '\n' && currentLineIsBlank) {
+          webFile = SD.open("index.htm"); // index.htm 파일 열기
+          if (webFile) {
+            // HTTP 헤더 전송
+            client.println("HTTP/1.1 200 OK");
+            client.println("Content-Type: text/html");
+            client.println("Connection: close");
+            client.println();
+
+            // 파일 내용을 클라이언트에게 전송
+            while (webFile.available()) {
+              client.write(webFile.read());
+            }
+            webFile.close();
+          } else {
+            // 파일이 없으면 404 에러 전송
+            client.println("HTTP/1.1 404 Not Found");
+            client.println("Content-Type: text/html");
+            client.println("Connection: close");
+            client.println();
+            client.println("<html><body><h1>404: File Not Found</h1></body></html>");
+          }
+          break;
+        }
+
+        // 줄 끝 체크
+        if (c == '\n') {
+          currentLineIsBlank = true;
+        } else if (c != '\r') {
+          currentLineIsBlank = false;
+        }
+      }
+    }
+    // 클라이언트와 연결 종료
+    delay(1);
+    client.stop();
+  }
+}
