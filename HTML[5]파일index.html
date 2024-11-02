@@ -1,1 +1,495 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://www.gstatic.com/firebasejs/7.2/firebase.js"></script>
+        <style>
+            table, th, td {
+              padding: 4px;
+            }
+            body {
+              background: linear-gradient(to right, white, #87cefa, yellow);
+             
+              font-family: "Lato", sans-serif;
+            }
+            .button {
+              border: none;
+                border-color:black;
+                color: white;
+                padding: 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+              }
+              .buttonMenu {
+                padding: 5px 24px;
+                margin-left:20%;
+                background-color:black;
+                border: none;
+                border-color:black;
+                color:white;
+                text-align: left;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+              }
+              .sidenav {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+              }
+              .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 18px;
+                color: #818181;
+                display: block;
+                      transition: 0.3s;
+              }
+              .sidenav a:hover {
+                color: #f1f1f1;
+              }
+              .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+              }
+              .button-box {background-color:#ff8000;color: white;border: none;padding: 6px 15px;}
+              .button-on {border-radius: 100%; background-color: #4CAF50;}
+              .button-off {border-radius: 100%;background-color: #707070;}
+              .button-ledon {border-radius: 100%; padding: 10px; font-size: 8px; margin: 0px 0px; background-color: #ff4500;}
+              .button-ledoff {border-radius: 100%; padding: 10px; font-size: 8px; background-color: #707070;}
+            </style>
+          <head>
+            <title>Arduino MEGA 24 Output</title>
+            <script>
+        strLED = "";
+    
+        function GetArduinoIO()
+        {
+          nocache = "&nocache=" + Math.random() * 1000000;
+          var request = new XMLHttpRequest();
+          request.onreadystatechange = function()
+          {
+            if (this.readyState == 4) {
+              if (this.status == 200) {
+                if (this.responseXML != null) {
+                  // XML file received - contains LED states
+                  var re;
+                  var num_LEDs;
+                  var i;
+                  var ledstr = "";
+                  
+                  re = this.responseXML.getElementsByTagName('LED');
+                  num_LEDs = re.length;
+                  
+                  for (i = 0; i < num_LEDs; i++) {
+                    ledstr = "LED" + (i + 1);
+                    if (re[i].childNodes[0].nodeValue === "checked") {
+                      document.getElementsByName(ledstr)[0].checked = true;
+                    }
+                    else {
+                      document.getElementsByName(ledstr)[0].checked = false;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          // send HTTP GET request with LEDs to switch on/off if any
+          request.open("GET", "ajax_inputs" + strLED + nocache, true);
+          request.send(null);
+          setTimeout('GetArduinoIO()', 1000);
+          strLED = "";
+        }
+        // service LEDs when checkbox checked/unchecked
+        function GetCheck(led_num_str, cb)
+        {
+          if (cb.checked) {
+            strLED += ("&" + led_num_str + "=1");
+          }
+          else {
+            strLED += ("&" + led_num_str + "=0");
+          }
+        }
+      </script>
+      <style>
+        .out_box {
+          float: left;
+          margin: 0 20px 20px 0;
+          border: 1px solid blue;
+          padding: 0 5px 0 5px;
+          min-width: 280px;
+        }
+        input {
+          margin: 10px;
+        }
+        input {
+          vertical-align: -3px;
+        }
+        h1 {
+          font-size: 120%;
+          color: blue;
+          margin: 0 0 10px 0;
+        }
+        h2 {
+          font-size: 85%;
+          color: #5734E6;
+          margin: 5px 0 5px 0;
+        }
+        p, form, button {
+          font-size: 80%;
+          color: #252525;
+        }
+        .small_text {
+          font-size: 70%;
+          color: #707070;
+        }
+      </style>
+       
 
+        
+       
+       <!DOCTYPE html>
+                <html>
+                    <head>
+                        <title>Arduino SD Card Web Page</title>
+                        <style>
+                            body {
+                                font-family: Arial, sans-serif; /* Optional: Set a default font */
+                            }
+                            .container {
+                                display: flex; /* Keep the flex layout */
+                            }
+                            .column {
+                                text-align: left; /* Align text to the left */
+                                margin-right: 20px; /* Optional: Add some space between columns */
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>【PLC 장치 제어】</h1>
+                        <div class="container">
+                            <div class="column">
+                                <p>【0】: 전구 [0]: 전구 제어 (0번)</p>
+                                <p>【1】: 침대 [1]: 침대 제어 (1번)</p>
+                                <p>【2】: 창고 [3]: 창고 제어 (3번)</p>
+                                <p>【3】: 전등 [5]: 전등 제어 (5번)</p>
+                                <p>【4】: 에어컨 [7]: 에어컨 제어 (7번)</p>
+                                
+                            </div>
+                            <div class="column">
+                                <p>【5】: 쿨러 [9]: 쿨러 제어 (9번)</p>
+                                <p>【6】: 조명 [11]: 조명 제어 (11번)</p>
+                                <p>【7】: 안방 [13]: 안방 제어 (13번)</p>
+                                <p>【8】: 주방 [15]: 주방 제어 (15번)</p>
+                                <p>【9】: 선풍기 [17]: 선풍기 제어 (17번)</p>
+                            </div>
+                        </div>
+                    </body>
+                </html> 
+
+
+
+
+
+
+
+
+                
+<a href="https://3rshop.co.kr/main/main.php" target="_blank">
+  
+              <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+            </a>
+            <a href="https://console.firebase.google.com/project/plc-esbh/database/plc-esbh-default-rtdb/data?hl=ko" target="_blank">
+              <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+          </a>
+          <a href="http://172.30.1.200/" target="_blank">
+            <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+          </a>
+          <a href="https://io.adafruit.com/KimSuHo/overview" target="_blank">
+            <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+        </a>
+        <a href="https://chatgpt.com" target="_blank">
+          <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+        </a>
+        <a href="https://chatgpt.com" target="_blank">
+          <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+      </a>
+      <a href="http://172.30.1.200/" target="_blank">
+        <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+      </a>
+      <a href="http://172.30.1.200/" target="_blank">
+        <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+    </a>
+    <a href="http://172.30.1.200/" target="_blank">
+      <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+    </a>
+    <a href="http://172.30.1.200/" target="_blank">
+      <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+  </a>
+  <a href="http://172.30.1.200/" target="_blank">
+    <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+  </a>
+  <a href="http://172.30.1.200/" target="_blank">
+    <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+</a>
+<a href="http://172.30.1.200/" target="_blank">
+  <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+</a>
+<a href="http://172.30.1.200/" target="_blank">
+  <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+</a>
+<a href="http://172.30.1.200/" target="_blank">
+  <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+</a>
+<a href="http://172.30.1.200/" target="_blank">
+  <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+</a>
+<a href="http://172.30.1.200/" target="_blank">
+  <img src="https://firebasestorage.googleapis.com/v0/b/photoblog-59481.appspot.com/o/download.png?alt=media&token=f999972b-f857-45cc-beef-2ffe898a03e3" alt="번개장터" height="50" width="100">
+</a>
+
+
+
+          <h1>【Dialogflow, Firebase, Node-RED】</h1>
+      
+          
+      </body>
+      </html>
+
+
+
+
+      <h1>【PLC 장치 제어】</h1>
+        
+    </form>   
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form0">
+            <h1>0</h1>
+            <input type="checkbox" onclick="myFunction(0, 1)"> 0전구 켜기
+            <input type="checkbox" onclick="myFunction(0, 0)"> 0전구 끄기<br />
+            <br />
+      </form>
+        <br />
+        </form>
+    </div>
+
+
+   
+    
+  
+
+
+
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form1">
+            <h1>1</h1>
+            <input type="checkbox" onclick="myFunction(1, 1)"> 1침대 켜기
+            <input type="checkbox" onclick="myFunction(1, 0)"> 1침대 끄기<br />
+            <input type="checkbox" onclick="myFunction(2, 1)"> 2번 켜기
+            <input type="checkbox" onclick="myFunction(2, 0)"> 2번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form2">
+            <h1>2</h1>
+            <input type="checkbox" onclick="myFunction(3, 1)"> 3창고 켜기
+            <input type="checkbox" onclick="myFunction(3, 0)"> 3창고 끄기<br />
+            <input type="checkbox" onclick="myFunction(4, 1)"> 4번 켜기
+            <input type="checkbox" onclick="myFunction(4, 0)"> 4번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form3">
+            <h1>3</h1>
+            <input type="checkbox" onclick="myFunction(5, 1)"> 5전등 켜기
+            <input type="checkbox" onclick="myFunction(5, 0)"> 5전등 끄기<br />
+            <input type="checkbox" onclick="myFunction(6, 1)"> 6번 켜기
+            <input type="checkbox" onclick="myFunction(6, 0)"> 6번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form4">
+            <h1>4</h1> 
+            <input type="checkbox" onclick="myFunction(7, 1)"> 7에어컨 켜기
+            <input type="checkbox" onclick="myFunction(7, 0)"> 7에어컨 끄기<br />
+            <input type="checkbox" onclick="myFunction(8, 1)"> 8번 켜기
+            <input type="checkbox" onclick="myFunction(8, 0)"> 8번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form5"> 
+            <h1>5</h1>
+            <input type="checkbox" onclick="myFunction(9, 1)"> 9쿨러 켜기
+            <input type="checkbox" onclick="myFunction(9, 0)"> 9쿨러 끄기<br />
+            <input type="checkbox" onclick="myFunction(10, 1)"> 10번 켜기
+            <input type="checkbox" onclick="myFunction(10, 0)"> 10번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form6">
+            <h1>6</h1> 
+            <input type="checkbox" onclick="myFunction(11, 1)"> 11조명 켜기
+            <input type="checkbox" onclick="myFunction(11, 0)"> 11조명 끄기<br />
+            <input type="checkbox" onclick="myFunction(12, 1)"> 12번 켜기
+            <input type="checkbox" onclick="myFunction(12, 0)"> 12번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form7">
+            <h1>7</h1> 
+            <input type="checkbox" onclick="myFunction(13, 1)"> 13안방 켜기
+            <input type="checkbox" onclick="myFunction(13, 0)"> 13안방 끄기<br />
+            <input type="checkbox" onclick="myFunction(14, 1)"> 14번 켜기
+            <input type="checkbox" onclick="myFunction(14, 0)"> 14번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form8">
+            <h1>8</h1> 
+            <input type="checkbox" onclick="myFunction(15, 1)"> 15주방 켜기
+            <input type="checkbox" onclick="myFunction(15, 0)"> 15주방 끄기<br />
+            <input type="checkbox" onclick="myFunction(16, 1)"> 16번 켜기
+            <input type="checkbox" onclick="myFunction(16, 0)"> 16번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form9">
+            <h1>9</h1> 
+            <input type="checkbox" onclick="myFunction(17, 1)"> 17선풍기 켜기
+            <input type="checkbox" onclick="myFunction(17, 0)"> 17선풍기 끄기<br />
+            <input type="checkbox" onclick="myFunction(18, 1)"> 18번 켜기
+            <input type="checkbox" onclick="myFunction(18, 0)"> 18번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form10">
+            <h1>10</h1> 
+            <input type="checkbox" onclick="myFunction(19, 1)"> 19번 켜기
+            <input type="checkbox" onclick="myFunction(19, 0)"> 19번 끄기<br />
+            <input type="checkbox" onclick="myFunction(20, 1)"> 20번 켜기
+            <input type="checkbox" onclick="myFunction(20, 0)"> 20번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form11">
+            <h1>11</h1> 
+            <input type="checkbox" onclick="myFunction(21, 1)"> 21번 켜기
+            <input type="checkbox" onclick="myFunction(21, 0)"> 21번 끄기<br />
+            <input type="checkbox" onclick="myFunction(22, 1)"> 22번 켜기
+            <input type="checkbox" onclick="myFunction(22, 0)"> 22번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form12">
+            <h1>12</h1> 
+            <input type="checkbox" onclick="myFunction(23, 1)"> 23번 켜기
+            <input type="checkbox" onclick="myFunction(23, 0)"> 23번 끄기<br />
+            <input type="checkbox" onclick="myFunction(24, 1)"> 24번 켜기
+            <input type="checkbox" onclick="myFunction(24, 0)"> 24번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form13">
+            <h1>13</h1> 
+            <input type="checkbox" onclick="myFunction(25, 1)"> 25번 켜기
+            <input type="checkbox" onclick="myFunction(25, 0)"> 25번 끄기<br />
+            <input type="checkbox" onclick="myFunction(26, 1)"> 26번 켜기
+            <input type="checkbox" onclick="myFunction(26, 0)"> 26번 끄기<br />
+        </form>
+    </div>
+    
+    <div class="out_box">
+        <form class="check_LEDs" name="LED_form14">
+            <h1>14</h1> 
+            <input type="checkbox" onclick="myFunction(27, 1)"> 27번 켜기
+            <input type="checkbox" onclick="myFunction(27, 0)"> 27번 끄기<br />
+            <input type="checkbox" onclick="myFunction(28, 1)"> 28번 켜기
+            <input type="checkbox" onclick="myFunction(28, 0)"> 28
+    
+        
+       
+<script>
+   const firebaseConfig = {
+  apiKey: "AIzaSyColf3DCwCJ30v58WWY8kV8FZKfpJwGrU4",
+  authDomain: "plc-esbh.firebaseapp.com",
+  databaseURL: "https://plc-esbh-default-rtdb.firebaseio.com",
+  projectId: "plc-esbh",
+  storageBucket: "plc-esbh.appspot.com",
+  messagingSenderId: "657007981412",
+  appId: "1:657007981412:web:4280259834457c273d0071"
+};
+// Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+            // firebase에서 읽기
+            var demo0 = document.getElementById("demo0");
+            var demo1 = document.getElementById("demo1");
+            var preObject = document.getElementById("object");
+            var dbRef = firebase.database().ref().child("read/led0");
+            var dbRef = firebase.database().ref().child("read/led1");
+            var dbRef = firebase.database().ref().child("data/on");
+            //dbRef.on('value',snap => demo.innerHTML = snap.val());
+            dbRef.on('value',snap => {
+                var led = snap.val();
+                if(led=='1')
+                    demo0.innerHTML = "<button class='button button-ledon'></button>";
+                else
+                    demo0.innerHTML = "<button class='button button-ledoff'></button>";
+            });
+
+            
+            dbRef.on('value',snap => {
+                var led = snap.val();
+                if(led=='1')
+                    demo1.innerHTML = "<button class='button button-ledon'></button>";
+                else
+                    demo1.innerHTML = "<button class='button button-ledoff'></button>";
+            });
+            dbRef.on('value',snap => {
+                preObject.innerText = JSON.stringify(snap.val(),null,3);
+            });
+        </script>
+
+        <script>
+            function myFunction(name, on) {
+                //document.getElementById("demo").innerHTML = "쓰기를 완료";
+                //alert("쓰기 완료");
+                
+                //firebase에 쓰기
+                var dbRefObject = firebase.database().ref();
+                dbRefObject.child("data").set({
+                    name:name,
+                    on:on
+                });
+            }
+        </script>
+    </body>
+    
+</html>  
