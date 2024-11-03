@@ -18,4 +18,4 @@ Windows 세팅 하면요 비주월 스트디오 C# PLC 지금 많 하고 있습�
 
 (2)Modbus TCP[1-4]node-red[CODESYS](UaExpert)(opcua)
 
-(3)Modbus TCP[1-3]node-red[Visual Studio 2022](C#)
+(3)Modbus TCP[1-3]node-red[Visual Studio 2022] (C#)
