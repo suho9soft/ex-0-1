@@ -1,0 +1,722 @@
+[
+    {
+        "id": "cd43500290e04fcc",
+        "type": "tab",
+        "label": "플로우 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "693dd37eb938e05f",
+        "type": "OpcUa-Client",
+        "z": "cd43500290e04fcc",
+        "endpoint": "ebbbaf7268ca4cc2",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "OPCUA_Leitura",
+        "x": 680,
+        "y": 200,
+        "wires": [
+            [
+                "a02609a646160d9d",
+                "913774b7d5dcb293"
+            ]
+        ]
+    },
+    {
+        "id": "f119c2e19765a875",
+        "type": "OpcUa-Item",
+        "z": "cd43500290e04fcc",
+        "item": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.bVar01",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "Boolean Var01",
+        "x": 420,
+        "y": 200,
+        "wires": [
+            [
+                "693dd37eb938e05f"
+            ]
+        ]
+    },
+    {
+        "id": "a02609a646160d9d",
+        "type": "debug",
+        "z": "cd43500290e04fcc",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 900,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "83256d36ce826f7b",
+        "type": "inject",
+        "z": "cd43500290e04fcc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "f119c2e19765a875"
+            ]
+        ]
+    },
+    {
+        "id": "2df78b461e5934fc",
+        "type": "OpcUa-Client",
+        "z": "cd43500290e04fcc",
+        "endpoint": "ebbbaf7268ca4cc2",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "OPCUA_Leitura",
+        "x": 680,
+        "y": 300,
+        "wires": [
+            [
+                "8c149afe093260a9"
+            ]
+        ]
+    },
+    {
+        "id": "4fb5c601f887bfaf",
+        "type": "OpcUa-Item",
+        "z": "cd43500290e04fcc",
+        "item": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.bVar02",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "Boolean Var02",
+        "x": 420,
+        "y": 300,
+        "wires": [
+            [
+                "2df78b461e5934fc"
+            ]
+        ]
+    },
+    {
+        "id": "8c149afe093260a9",
+        "type": "debug",
+        "z": "cd43500290e04fcc",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "3d6aed18c7a502df",
+        "type": "ui_button",
+        "z": "cd43500290e04fcc",
+        "name": "",
+        "group": "acc3445bbbea548c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Boolean Var02",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 300,
+        "wires": [
+            [
+                "4fb5c601f887bfaf"
+            ]
+        ]
+    },
+    {
+        "id": "68d0dfa02075a986",
+        "type": "ui_switch",
+        "z": "cd43500290e04fcc",
+        "name": "",
+        "label": "Boolean Var02",
+        "tooltip": "",
+        "group": "acc3445bbbea548c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "a91b338a9bf7baa6"
+            ]
+        ]
+    },
+    {
+        "id": "eb6d064aafd59d53",
+        "type": "OpcUa-Client",
+        "z": "cd43500290e04fcc",
+        "endpoint": "ebbbaf7268ca4cc2",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "OPCUA_Leitura",
+        "x": 660,
+        "y": 380,
+        "wires": [
+            [
+                "763ceab9c4215e56"
+            ]
+        ]
+    },
+    {
+        "id": "a91b338a9bf7baa6",
+        "type": "OpcUa-Item",
+        "z": "cd43500290e04fcc",
+        "item": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.bVar02",
+        "datatype": "Boolean",
+        "value": "",
+        "name": "Boolean Var02",
+        "x": 420,
+        "y": 380,
+        "wires": [
+            [
+                "eb6d064aafd59d53"
+            ]
+        ]
+    },
+    {
+        "id": "763ceab9c4215e56",
+        "type": "debug",
+        "z": "cd43500290e04fcc",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "873f138d4154dfc1",
+        "type": "OpcUa-Client",
+        "z": "cd43500290e04fcc",
+        "endpoint": "ebbbaf7268ca4cc2",
+        "action": "write",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "OPCUA_Leitura",
+        "x": 720,
+        "y": 540,
+        "wires": [
+            [
+                "1bf77ddd0809de3e"
+            ]
+        ]
+    },
+    {
+        "id": "aa7900547efa450a",
+        "type": "OpcUa-Item",
+        "z": "cd43500290e04fcc",
+        "item": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.iVar01",
+        "datatype": "Int16",
+        "value": "",
+        "name": "integer iVar01",
+        "x": 460,
+        "y": 540,
+        "wires": [
+            [
+                "873f138d4154dfc1"
+            ]
+        ]
+    },
+    {
+        "id": "1bf77ddd0809de3e",
+        "type": "debug",
+        "z": "cd43500290e04fcc",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "4a9f6ce2d95864fd",
+        "type": "OpcUa-Client",
+        "z": "cd43500290e04fcc",
+        "endpoint": "ebbbaf7268ca4cc2",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "securitymode": "None",
+        "securitypolicy": "None",
+        "folderName4PKI": "",
+        "useTransport": false,
+        "maxChunkCount": 1,
+        "maxMessageSize": 8192,
+        "receiveBufferSize": 8192,
+        "sendBufferSize": 8192,
+        "name": "OPCUA_Leitura",
+        "x": 660,
+        "y": 800,
+        "wires": [
+            [
+                "501707128db5cc40",
+                "6bd419e68bd34b44",
+                "7a24294afefd49dd"
+            ]
+        ]
+    },
+    {
+        "id": "f47f5d0658826fd6",
+        "type": "OpcUa-Item",
+        "z": "cd43500290e04fcc",
+        "item": "ns=4;s=|var|CODESYS Control Win V3 x64.Application.PLC_PRG.rVar01",
+        "datatype": "Float",
+        "value": "",
+        "name": "Real rVar01",
+        "x": 390,
+        "y": 800,
+        "wires": [
+            [
+                "4a9f6ce2d95864fd"
+            ]
+        ]
+    },
+    {
+        "id": "501707128db5cc40",
+        "type": "debug",
+        "z": "cd43500290e04fcc",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 880,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "1dbd1cfd3357768b",
+        "type": "inject",
+        "z": "cd43500290e04fcc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 800,
+        "wires": [
+            [
+                "f47f5d0658826fd6"
+            ]
+        ]
+    },
+    {
+        "id": "7a24294afefd49dd",
+        "type": "ui_gauge",
+        "z": "cd43500290e04fcc",
+        "name": "",
+        "group": "96a2ce6eaa4d1e64",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Real Var01",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 890,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "a956cd0e3b0f32ea",
+        "type": "ui_numeric",
+        "z": "cd43500290e04fcc",
+        "name": "",
+        "label": "integer Var01",
+        "tooltip": "",
+        "group": "96be098589d839ac",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "x": 150,
+        "y": 540,
+        "wires": [
+            [
+                "aa7900547efa450a"
+            ]
+        ]
+    },
+    {
+        "id": "913774b7d5dcb293",
+        "type": "modbus-write",
+        "z": "cd43500290e04fcc",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "server": "708ff6d7311fc779",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 760,
+        "y": 60,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6bd419e68bd34b44",
+        "type": "modbus-write",
+        "z": "cd43500290e04fcc",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "1",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 900,
+        "y": 900,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b5d32b3f499d21c3",
+        "type": "ui_button",
+        "z": "cd43500290e04fcc",
+        "name": "",
+        "group": "96a2ce6eaa4d1e64",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "램프켜",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 230,
+        "y": 620,
+        "wires": [
+            [
+                "aa7900547efa450a"
+            ]
+        ]
+    },
+    {
+        "id": "44b56a324915a0fc",
+        "type": "ui_button",
+        "z": "cd43500290e04fcc",
+        "name": "",
+        "group": "96a2ce6eaa4d1e64",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "램프꺼",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 230,
+        "y": 700,
+        "wires": [
+            [
+                "aa7900547efa450a"
+            ]
+        ]
+    },
+    {
+        "id": "ebbbaf7268ca4cc2",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://DESKTOP-D0HO282:4840",
+        "secpol": "Basic256Sha256",
+        "secmode": "Sign",
+        "none": false,
+        "login": true,
+        "usercert": false,
+        "usercertificate": "",
+        "userprivatekey": ""
+    },
+    {
+        "id": "acc3445bbbea548c",
+        "type": "ui_group",
+        "name": "Group 0",
+        "tab": "f02a7fb95d598025",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "96a2ce6eaa4d1e64",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "f02a7fb95d598025",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "96be098589d839ac",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "f02a7fb95d598025",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "708ff6d7311fc779",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "simpleser",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "172.30.1.121",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "COM13",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "115200",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": 2000,
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "fc533e606813e4f3",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "172.30.1.121",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "COM6",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "115200",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "f02a7fb95d598025",
+        "type": "ui_tab",
+        "name": "Tab 2",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]
