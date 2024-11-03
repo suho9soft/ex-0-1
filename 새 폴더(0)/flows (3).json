@@ -1,0 +1,1034 @@
+[
+    {
+        "id": "0a21f72f14fa3546",
+        "type": "tab",
+        "label": "플로우 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ef62a217fe668ae4",
+        "type": "modbus-write",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "server": "de444a054c6ebe07",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 620,
+        "y": 100,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "5dfcfb2d728f8b85",
+        "type": "ui_button",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "group": "950bebfc4bd6dac6",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "%QX0.0.0켜기",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 420,
+        "y": 80,
+        "wires": [
+            [
+                "ef62a217fe668ae4"
+            ]
+        ]
+    },
+    {
+        "id": "a3efafd3561ee5dd",
+        "type": "ui_button",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "group": "950bebfc4bd6dac6",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "%QX0.0.0끄기",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 420,
+        "y": 120,
+        "wires": [
+            [
+                "ef62a217fe668ae4"
+            ]
+        ]
+    },
+    {
+        "id": "7693579379ddd329",
+        "type": "modbus-read",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "3",
+        "rate": "500",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "de444a054c6ebe07",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 410,
+        "y": 440,
+        "wires": [
+            [],
+            [
+                "3822e71c8d3dcb74",
+                "5d628f28841ea76c",
+                "e5e9dc7ac493c17d"
+            ]
+        ]
+    },
+    {
+        "id": "5998283dd7f6042f",
+        "type": "ui_text",
+        "z": "0a21f72f14fa3546",
+        "group": "950bebfc4bd6dac6",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%QX0.0.0의상태",
+        "format": "{{msg.payload.result}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 890,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "3822e71c8d3dcb74",
+        "type": "switch",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "property": "payload.data[0]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 500,
+        "wires": [
+            [
+                "b6fc42201aee0d8f"
+            ],
+            [
+                "6229f5ea6a77a56a"
+            ]
+        ]
+    },
+    {
+        "id": "b6fc42201aee0d8f",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "꺼짐(OFF)",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 460,
+        "wires": [
+            [
+                "5998283dd7f6042f"
+            ]
+        ]
+    },
+    {
+        "id": "6229f5ea6a77a56a",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "켜짐(ON)",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 540,
+        "wires": [
+            [
+                "5998283dd7f6042f"
+            ]
+        ]
+    },
+    {
+        "id": "3d9533df4e4c4351",
+        "type": "modbus-write",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "1",
+        "quantity": "1",
+        "server": "de444a054c6ebe07",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "x": 620,
+        "y": 180,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e5416f64b8802859",
+        "type": "ui_button",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "group": "950bebfc4bd6dac6",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "%QX0.0.1켜기",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 420,
+        "y": 160,
+        "wires": [
+            [
+                "3d9533df4e4c4351"
+            ]
+        ]
+    },
+    {
+        "id": "1fd5e51037f062e5",
+        "type": "ui_button",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "group": "950bebfc4bd6dac6",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "%QX0.0.1끄기",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 420,
+        "y": 200,
+        "wires": [
+            [
+                "3d9533df4e4c4351"
+            ]
+        ]
+    },
+    {
+        "id": "3fa02259d1f9b03a",
+        "type": "modbus-write",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "2",
+        "quantity": "1",
+        "server": "de444a054c6ebe07",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 620,
+        "y": 260,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "254f854dd74033fe",
+        "type": "ui_button",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "group": "950bebfc4bd6dac6",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "%QX0.0.2켜기",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 420,
+        "y": 240,
+        "wires": [
+            [
+                "3fa02259d1f9b03a"
+            ]
+        ]
+    },
+    {
+        "id": "51c64578a366e1bb",
+        "type": "ui_button",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "group": "950bebfc4bd6dac6",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "%QX0.0.2끄기",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 420,
+        "y": 280,
+        "wires": [
+            [
+                "3fa02259d1f9b03a"
+            ]
+        ]
+    },
+    {
+        "id": "e127aae2657ffa49",
+        "type": "ui_text",
+        "z": "0a21f72f14fa3546",
+        "group": "950bebfc4bd6dac6",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%QX0.0.1의상태",
+        "format": "{{msg.payload.result}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 890,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "4098011502ced23e",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "꺼짐(OFF)",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 580,
+        "wires": [
+            [
+                "e127aae2657ffa49"
+            ]
+        ]
+    },
+    {
+        "id": "5b56c07ee645d1c4",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "켜짐(ON)",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 660,
+        "wires": [
+            [
+                "e127aae2657ffa49"
+            ]
+        ]
+    },
+    {
+        "id": "5d628f28841ea76c",
+        "type": "switch",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "property": "payload.data[1]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 620,
+        "wires": [
+            [
+                "4098011502ced23e"
+            ],
+            [
+                "5b56c07ee645d1c4"
+            ]
+        ]
+    },
+    {
+        "id": "5c99cb2c8430eb89",
+        "type": "ui_text",
+        "z": "0a21f72f14fa3546",
+        "group": "950bebfc4bd6dac6",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%QX0.0.2의상태",
+        "format": "{{msg.payload.result}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 890,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "f609d510263e4096",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "꺼짐(OFF)",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 700,
+        "wires": [
+            [
+                "5c99cb2c8430eb89"
+            ]
+        ]
+    },
+    {
+        "id": "bed633477937493d",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "켜짐(ON)",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 780,
+        "wires": [
+            [
+                "5c99cb2c8430eb89"
+            ]
+        ]
+    },
+    {
+        "id": "e5e9dc7ac493c17d",
+        "type": "switch",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "property": "payload.data[2]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 740,
+        "wires": [
+            [
+                "f609d510263e4096"
+            ],
+            [
+                "bed633477937493d"
+            ]
+        ]
+    },
+    {
+        "id": "ca92485749c8bd4c",
+        "type": "modbus-read",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "2",
+        "rate": "500",
+        "rateUnit": "ms",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "de444a054c6ebe07",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 410,
+        "y": 840,
+        "wires": [
+            [],
+            [
+                "d556e1305d6ded35",
+                "842135e4a37c8f6c",
+                "8c7a94c41ad9c4a8"
+            ]
+        ]
+    },
+    {
+        "id": "329fdedc4ade0110",
+        "type": "ui_text",
+        "z": "0a21f72f14fa3546",
+        "group": "950bebfc4bd6dac6",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%IX0.0.0의상태",
+        "format": "{{msg.payload.result}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 880,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "4a2c964df0a50479",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "안눌려짐",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 860,
+        "wires": [
+            [
+                "329fdedc4ade0110"
+            ]
+        ]
+    },
+    {
+        "id": "bca35ba9ab114e66",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "눌려짐",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 940,
+        "wires": [
+            [
+                "329fdedc4ade0110"
+            ]
+        ]
+    },
+    {
+        "id": "d556e1305d6ded35",
+        "type": "switch",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "property": "payload.data[0]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 900,
+        "wires": [
+            [
+                "4a2c964df0a50479"
+            ],
+            [
+                "bca35ba9ab114e66"
+            ]
+        ]
+    },
+    {
+        "id": "66c47fc1c45a15c7",
+        "type": "ui_text",
+        "z": "0a21f72f14fa3546",
+        "group": "950bebfc4bd6dac6",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%IX0.0.1의상태",
+        "format": "{{msg.payload.result}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 880,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "3276467395042077",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "안눌려짐",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 980,
+        "wires": [
+            [
+                "66c47fc1c45a15c7"
+            ]
+        ]
+    },
+    {
+        "id": "4448ff82fcc80496",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "눌려짐",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 1060,
+        "wires": [
+            [
+                "66c47fc1c45a15c7"
+            ]
+        ]
+    },
+    {
+        "id": "842135e4a37c8f6c",
+        "type": "switch",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "property": "payload.data[1]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 1020,
+        "wires": [
+            [
+                "3276467395042077"
+            ],
+            [
+                "4448ff82fcc80496"
+            ]
+        ]
+    },
+    {
+        "id": "78ba7b293d1d60f2",
+        "type": "ui_text",
+        "z": "0a21f72f14fa3546",
+        "group": "950bebfc4bd6dac6",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "%IX0.0.2의상태",
+        "format": "{{msg.payload.result}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 880,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "4198c26c271d8af8",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "안눌려짐",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 1160,
+        "wires": [
+            [
+                "78ba7b293d1d60f2"
+            ]
+        ]
+    },
+    {
+        "id": "a8a9fb71a6e28284",
+        "type": "change",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.result",
+                "pt": "msg",
+                "to": "눌려짐",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 1240,
+        "wires": [
+            [
+                "78ba7b293d1d60f2"
+            ]
+        ]
+    },
+    {
+        "id": "8c7a94c41ad9c4a8",
+        "type": "switch",
+        "z": "0a21f72f14fa3546",
+        "name": "",
+        "property": "payload.data[2]",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 1200,
+        "wires": [
+            [
+                "4198c26c271d8af8"
+            ],
+            [
+                "a8a9fb71a6e28284"
+            ]
+        ]
+    },
+    {
+        "id": "095151aa518b2f07",
+        "type": "ui_spacer",
+        "z": "0a21f72f14fa3546",
+        "name": "spacer",
+        "group": "b590c18f63323362",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "de444a054c6ebe07",
+        "type": "modbus-client",
+        "name": "MYTCP",
+        "clienttype": "serial",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "172.30.1.121",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "COM6",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "950bebfc4bd6dac6",
+        "type": "ui_group",
+        "name": "Group 0",
+        "tab": "38c85c3309dffe54",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b590c18f63323362",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "38c85c3309dffe54",
+        "type": "ui_tab",
+        "name": "노드3번",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    }
+]
