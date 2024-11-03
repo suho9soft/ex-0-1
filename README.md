@@ -6,3 +6,4 @@ Arduino Ethernet Shield 2 Raspberry Pi 4 Windows11
 Arduino Ethernet2[0-2]Modbus TCP[node-red][C#](IP 주소 TCP 서버 잡히면 실행 된니다)
 ![화면 캡처 2024-11-03 203716](https://github.com/user-attachments/assets/58eb9429-5bee-473a-884e-e9b742ce91ac)
 https://www.facebook.com/100011608833660/videos/27388525307460855
+/
