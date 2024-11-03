@@ -12,10 +12,10 @@ Windows 세팅 하면요 비주월 스트디오 C# PLC 지금 많 하고 있습�
 
 새 폴더[0]node-red 에서 실행된니다
 
-(0)Modbus TCP[1-1-0]node-red(Home)(어시스턴트)(alexa-smart-home-v3)(Iot MQTT Panel)
+(0)Modbus TCP[0]node-red(Home)(어시스턴트)(alexa-smart-home-v3)(Iot MQTT Panel)
 
-(1)dashboard[1-1-1]node-red(Iot MQTT Panel)(채팅)
+(1)dashboard[1]node-red(Iot MQTT Panel)(채팅)
 
-(2)Modbus TCP[1-4]node-red[CODESYS](UaExpert)(opcua)
+(2)Modbus TCP[2]node-red[CODESYS](UaExpert)(opcua)
 
-(3)Modbus TCP[1-3]node-red[Visual Studio 2022] (C#)
+(3)Modbus TCP[3]node-red[Visual Studio 2022] (C#)
