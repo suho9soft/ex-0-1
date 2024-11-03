@@ -10,7 +10,7 @@ Radxa ROCK 5B + RK3588 8 코어 CPU, GPU 및 NPU 지지대, 8K HDMI, LPDDR5 RAM 
 Windows 세팅 하면요 비주월 스트디오 C# PLC 지금 많 하고 있습니다 왜그러냐면요 Windows 에서 프로그램만 넣어 주면
 실행이 되기 때문에 아마 터치 스크린 에서 유리 해서 그렇것 같습니다
 
-[1]
+[1]node-red 에서 실행된니다
 
 (0)Modbus TCP[1-1-0]node-red(Home)(어시스턴트)(alexa-smart-home-v3)(Iot MQTT Panel)
 
