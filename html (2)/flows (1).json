@@ -1,0 +1,2364 @@
+[
+    {
+        "id": "9a35a27eb40c138a",
+        "type": "tab",
+        "label": "플로우 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2c30a5c52859d11a",
+        "type": "switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "property": "payload.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "7",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "8",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "9",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "10",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "11",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "12",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "13",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "14",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "15",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "16",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "17",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 18,
+        "x": 630,
+        "y": 1140,
+        "wires": [
+            [
+                "b81cfa7eaa0e02c4"
+            ],
+            [
+                "8ac0ddcde2a7d5c9"
+            ],
+            [
+                "cad7beda4dcd4609"
+            ],
+            [
+                "fc7dc2b298776d6b"
+            ],
+            [
+                "bfd1c39c905a54e2"
+            ],
+            [
+                "fe5cddc291b840dd"
+            ],
+            [
+                "6d2e5d64f0722e15"
+            ],
+            [
+                "d0aaad0b5cf3d201"
+            ],
+            [
+                "4e24cc6b77857893"
+            ],
+            [
+                "73c632bdb82b230c"
+            ],
+            [
+                "4bcda6a197c35c2b"
+            ],
+            [
+                "4b7b394f3e2511d0"
+            ],
+            [
+                "5ea4afad75f3fc53"
+            ],
+            [
+                "519ae73e17c54822"
+            ],
+            [
+                "ef1c83dd08edf2d5"
+            ],
+            [
+                "d64318c6283b8f80"
+            ],
+            [
+                "d21066c416dffe0d"
+            ],
+            [
+                "6cc5a63bfc587761"
+            ]
+        ]
+    },
+    {
+        "id": "b81cfa7eaa0e02c4",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 11",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 100,
+        "wires": [
+            [
+                "eb22ea6052f8c618"
+            ]
+        ]
+    },
+    {
+        "id": "8ac0ddcde2a7d5c9",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 12",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 180,
+        "wires": [
+            [
+                "432d769e366614ff"
+            ]
+        ]
+    },
+    {
+        "id": "eb22ea6052f8c618",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "0",
+        "tooltip": "",
+        "group": "aadd73a7d70dc897",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1130,
+        "y": 100,
+        "wires": [
+            [
+                "75d9d2e88c922035",
+                "e6e20c296a6e658d"
+            ]
+        ]
+    },
+    {
+        "id": "432d769e366614ff",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "1",
+        "tooltip": "",
+        "group": "6976024bd3350da9",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1130,
+        "y": 180,
+        "wires": [
+            [
+                "b9388b6ec92e1c0d",
+                "998deba5d0811d86"
+            ]
+        ]
+    },
+    {
+        "id": "75d9d2e88c922035",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1360,
+        "y": 100,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b9388b6ec92e1c0d",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "6976024bd3350da9",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e6e20c296a6e658d",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "aadd73a7d70dc897",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "cad7beda4dcd4609",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 13",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 300,
+        "wires": [
+            [
+                "55072f842b304bfc"
+            ]
+        ]
+    },
+    {
+        "id": "fc7dc2b298776d6b",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 14",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 380,
+        "wires": [
+            [
+                "0f5b70a92a7c1a4d"
+            ]
+        ]
+    },
+    {
+        "id": "55072f842b304bfc",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "2",
+        "tooltip": "",
+        "group": "eb017b5bb5fe9489",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1130,
+        "y": 300,
+        "wires": [
+            [
+                "d40b632c9b5ab2f5",
+                "bfb5173eb0069186"
+            ]
+        ]
+    },
+    {
+        "id": "0f5b70a92a7c1a4d",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "3",
+        "tooltip": "",
+        "group": "04bd1e3dd02de43d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1130,
+        "y": 380,
+        "wires": [
+            [
+                "a25886df31c26c78",
+                "bb094aa4e6ddb3fa"
+            ]
+        ]
+    },
+    {
+        "id": "d40b632c9b5ab2f5",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "2",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1360,
+        "y": 300,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a25886df31c26c78",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "04bd1e3dd02de43d",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "bfb5173eb0069186",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "eb017b5bb5fe9489",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "bfd1c39c905a54e2",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 15",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 520,
+        "wires": [
+            [
+                "2005f773e9d4300e"
+            ]
+        ]
+    },
+    {
+        "id": "fe5cddc291b840dd",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 16",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 600,
+        "wires": [
+            [
+                "1e04ceed46c7e95d"
+            ]
+        ]
+    },
+    {
+        "id": "2005f773e9d4300e",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "4",
+        "tooltip": "",
+        "group": "a9ba07fbeb70f245",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1130,
+        "y": 520,
+        "wires": [
+            [
+                "2db38f57a10dedb4",
+                "e5885ab1f5f4385e"
+            ]
+        ]
+    },
+    {
+        "id": "1e04ceed46c7e95d",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "5",
+        "tooltip": "",
+        "group": "802bf169fb954984",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1130,
+        "y": 600,
+        "wires": [
+            [
+                "66a78c04d623ca2c",
+                "49b58dbfd98b713b"
+            ]
+        ]
+    },
+    {
+        "id": "2db38f57a10dedb4",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "4",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1360,
+        "y": 520,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "66a78c04d623ca2c",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "802bf169fb954984",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "e5885ab1f5f4385e",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "a9ba07fbeb70f245",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "6d2e5d64f0722e15",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 19",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 740,
+        "wires": [
+            [
+                "c44d3ad892d6e39e"
+            ]
+        ]
+    },
+    {
+        "id": "d0aaad0b5cf3d201",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 20",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 820,
+        "wires": [
+            [
+                "8120bb6e04e3b786"
+            ]
+        ]
+    },
+    {
+        "id": "c44d3ad892d6e39e",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "6",
+        "tooltip": "",
+        "group": "d976ceacf62bc52c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 740,
+        "wires": [
+            [
+                "d478cd4492025443",
+                "1c669295673ebdae"
+            ]
+        ]
+    },
+    {
+        "id": "8120bb6e04e3b786",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "7",
+        "tooltip": "",
+        "group": "60c1ef7e983f9810",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 820,
+        "wires": [
+            [
+                "4b84f8297738266a",
+                "deb710693e4438d9"
+            ]
+        ]
+    },
+    {
+        "id": "d478cd4492025443",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "6",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1340,
+        "y": 740,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4b84f8297738266a",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "60c1ef7e983f9810",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "1c669295673ebdae",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "d976ceacf62bc52c",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "4e24cc6b77857893",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 21",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 960,
+        "wires": [
+            [
+                "ae4883d19259dec0"
+            ]
+        ]
+    },
+    {
+        "id": "73c632bdb82b230c",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 22",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1040,
+        "wires": [
+            [
+                "e765017a9c77cf78"
+            ]
+        ]
+    },
+    {
+        "id": "ae4883d19259dec0",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "8",
+        "tooltip": "",
+        "group": "03b5d6ca8698c33a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 960,
+        "wires": [
+            [
+                "a9aa0c0df83e140c",
+                "90ecea06d8bdb154"
+            ]
+        ]
+    },
+    {
+        "id": "e765017a9c77cf78",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "9",
+        "tooltip": "",
+        "group": "b09390c325b57f31",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 1040,
+        "wires": [
+            [
+                "e4aa75f1d424aa2e",
+                "36b7085d6f598182"
+            ]
+        ]
+    },
+    {
+        "id": "90ecea06d8bdb154",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "8",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1340,
+        "y": 960,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e4aa75f1d424aa2e",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "b09390c325b57f31",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "a9aa0c0df83e140c",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "03b5d6ca8698c33a",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "4bcda6a197c35c2b",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 23",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1240,
+        "wires": [
+            [
+                "bd44d4ca98e597ef"
+            ]
+        ]
+    },
+    {
+        "id": "4b7b394f3e2511d0",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 24",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1320,
+        "wires": [
+            [
+                "9c81599d38746f2d"
+            ]
+        ]
+    },
+    {
+        "id": "bd44d4ca98e597ef",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "10",
+        "tooltip": "",
+        "group": "2fd978806c4dd105",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 1240,
+        "wires": [
+            [
+                "ab4cd3c7d7f4d9ac",
+                "3fb048eed078accf"
+            ]
+        ]
+    },
+    {
+        "id": "9c81599d38746f2d",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "11",
+        "tooltip": "",
+        "group": "81445d85853e5cb3",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 1320,
+        "wires": [
+            [
+                "e36793b0457aac1e",
+                "e3b8a6f5e9f0a3a7"
+            ]
+        ]
+    },
+    {
+        "id": "3fb048eed078accf",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "10",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1340,
+        "y": 1240,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e36793b0457aac1e",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "81445d85853e5cb3",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "ab4cd3c7d7f4d9ac",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "2fd978806c4dd105",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "5ea4afad75f3fc53",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 25",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1420,
+        "wires": [
+            [
+                "98ea37e48d56400b"
+            ]
+        ]
+    },
+    {
+        "id": "519ae73e17c54822",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 26",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1500,
+        "wires": [
+            [
+                "0f46c1258de59b7b"
+            ]
+        ]
+    },
+    {
+        "id": "98ea37e48d56400b",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "12",
+        "tooltip": "",
+        "group": "43b1e3dc85c8355b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 1420,
+        "wires": [
+            [
+                "9be04d01e26ce3dd",
+                "1144e592d24dddc1"
+            ]
+        ]
+    },
+    {
+        "id": "0f46c1258de59b7b",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "13",
+        "tooltip": "",
+        "group": "c91ee63ebe5b8518",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 1500,
+        "wires": [
+            [
+                "bf245701c72f2745",
+                "ca4469c2fdc04155"
+            ]
+        ]
+    },
+    {
+        "id": "9be04d01e26ce3dd",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "12",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1340,
+        "y": 1420,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "bf245701c72f2745",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "c91ee63ebe5b8518",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "1144e592d24dddc1",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "43b1e3dc85c8355b",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1270,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "ef1c83dd08edf2d5",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 27",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1660,
+        "wires": [
+            [
+                "3970a84816e11fc8"
+            ]
+        ]
+    },
+    {
+        "id": "d64318c6283b8f80",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 28",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1740,
+        "wires": [
+            [
+                "3680750ebdfebe76"
+            ]
+        ]
+    },
+    {
+        "id": "3970a84816e11fc8",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "14",
+        "tooltip": "",
+        "group": "2213a138c008c43a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 1660,
+        "wires": [
+            [
+                "5b409a9159165eb6",
+                "c0678be104a3b1a9"
+            ]
+        ]
+    },
+    {
+        "id": "3680750ebdfebe76",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "15",
+        "tooltip": "",
+        "group": "50ad621b3c8ecf22",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 1740,
+        "wires": [
+            [
+                "92816bbd50433016",
+                "cc12e1b90564054c"
+            ]
+        ]
+    },
+    {
+        "id": "c0678be104a3b1a9",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "14",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1340,
+        "y": 1660,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "92816bbd50433016",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "50ad621b3c8ecf22",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 1740,
+        "wires": []
+    },
+    {
+        "id": "5b409a9159165eb6",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "2213a138c008c43a",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "d21066c416dffe0d",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 29",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1840,
+        "wires": [
+            [
+                "115ed005b1ed5279"
+            ]
+        ]
+    },
+    {
+        "id": "6cc5a63bfc587761",
+        "type": "function",
+        "z": "9a35a27eb40c138a",
+        "name": "function 30",
+        "func": "msg.payload=msg.payload.on;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 1920,
+        "wires": [
+            [
+                "e89fba4f143496ef"
+            ]
+        ]
+    },
+    {
+        "id": "115ed005b1ed5279",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "16",
+        "tooltip": "",
+        "group": "760fa3615be1e4ff",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 1840,
+        "wires": [
+            [
+                "ac86b5c16c1723db",
+                "b1e3fb98d4533755"
+            ]
+        ]
+    },
+    {
+        "id": "e89fba4f143496ef",
+        "type": "ui_switch",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "label": "17",
+        "tooltip": "",
+        "group": "537328741c636a9d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 1110,
+        "y": 1920,
+        "wires": [
+            [
+                "3144f358a1ce5b9f",
+                "4cd11d4b1b39b75d"
+            ]
+        ]
+    },
+    {
+        "id": "ac86b5c16c1723db",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "16",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1340,
+        "y": 1840,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3144f358a1ce5b9f",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "537328741c636a9d",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1330,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "b1e3fb98d4533755",
+        "type": "ui_led",
+        "z": "9a35a27eb40c138a",
+        "order": 1,
+        "group": "760fa3615be1e4ff",
+        "width": 0,
+        "height": 0,
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#008000",
+                "value": "1",
+                "valueType": "num"
+            },
+            {
+                "color": "#ff0000",
+                "value": "0",
+                "valueType": "num"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1270,
+        "y": 1780,
+        "wires": []
+    },
+    {
+        "id": "998deba5d0811d86",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "1",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1500,
+        "y": 180,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "bb094aa4e6ddb3fa",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "3",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1520,
+        "y": 380,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "49b58dbfd98b713b",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "5",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1540,
+        "y": 600,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "deb710693e4438d9",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "7",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1540,
+        "y": 820,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "36b7085d6f598182",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "9",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1520,
+        "y": 1040,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "e3b8a6f5e9f0a3a7",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "11",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1560,
+        "y": 1320,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ca4469c2fdc04155",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "13",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1560,
+        "y": 1500,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "cc12e1b90564054c",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "15",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1580,
+        "y": 1740,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4cd11d4b1b39b75d",
+        "type": "modbus-write",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "17",
+        "quantity": "1",
+        "server": "fc533e606813e4f3",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 1580,
+        "y": 1920,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "c2a06464608ebe7d",
+        "type": "firebase.on",
+        "z": "9a35a27eb40c138a",
+        "name": "",
+        "firebaseconfig": "",
+        "childpath": "/data",
+        "atStart": true,
+        "eventType": "value",
+        "queries": [],
+        "x": 350,
+        "y": 1140,
+        "wires": [
+            [
+                "2c30a5c52859d11a"
+            ]
+        ]
+    },
+    {
+        "id": "aadd73a7d70dc897",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "59b4877cdef805cc",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "6976024bd3350da9",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "59b4877cdef805cc",
+        "order": 2,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "fc533e606813e4f3",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "172.30.1.121",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "COM1",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "115200",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true,
+        "showErrors": false,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "eb017b5bb5fe9489",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "59b4877cdef805cc",
+        "order": 3,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "04bd1e3dd02de43d",
+        "type": "ui_group",
+        "name": "Group 4",
+        "tab": "59b4877cdef805cc",
+        "order": 4,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "a9ba07fbeb70f245",
+        "type": "ui_group",
+        "name": "Group 5",
+        "tab": "59b4877cdef805cc",
+        "order": 5,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "802bf169fb954984",
+        "type": "ui_group",
+        "name": "Group 6",
+        "tab": "59b4877cdef805cc",
+        "order": 6,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "d976ceacf62bc52c",
+        "type": "ui_group",
+        "name": "Group 7",
+        "tab": "59b4877cdef805cc",
+        "order": 7,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "60c1ef7e983f9810",
+        "type": "ui_group",
+        "name": "Group 8",
+        "tab": "59b4877cdef805cc",
+        "order": 8,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "03b5d6ca8698c33a",
+        "type": "ui_group",
+        "name": "Group 9",
+        "tab": "59b4877cdef805cc",
+        "order": 9,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "b09390c325b57f31",
+        "type": "ui_group",
+        "name": "Group 10",
+        "tab": "59b4877cdef805cc",
+        "order": 10,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2fd978806c4dd105",
+        "type": "ui_group",
+        "name": "Group 11",
+        "tab": "59b4877cdef805cc",
+        "order": 11,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "81445d85853e5cb3",
+        "type": "ui_group",
+        "name": "Group 12",
+        "tab": "59b4877cdef805cc",
+        "order": 12,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "43b1e3dc85c8355b",
+        "type": "ui_group",
+        "name": "Group 13",
+        "tab": "59b4877cdef805cc",
+        "order": 13,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "c91ee63ebe5b8518",
+        "type": "ui_group",
+        "name": "Group 14",
+        "tab": "59b4877cdef805cc",
+        "order": 14,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "2213a138c008c43a",
+        "type": "ui_group",
+        "name": "Group 15",
+        "tab": "59b4877cdef805cc",
+        "order": 15,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "50ad621b3c8ecf22",
+        "type": "ui_group",
+        "name": "Group 16",
+        "tab": "59b4877cdef805cc",
+        "order": 16,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "760fa3615be1e4ff",
+        "type": "ui_group",
+        "name": "Group 17",
+        "tab": "59b4877cdef805cc",
+        "order": 17,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "537328741c636a9d",
+        "type": "ui_group",
+        "name": "Group 18",
+        "tab": "59b4877cdef805cc",
+        "order": 18,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "59b4877cdef805cc",
+        "type": "ui_tab",
+        "name": "Tab 2",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]
